@@ -15,12 +15,7 @@ import { Navigation } from "./src/infrastructure/navigation";
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyANrXy_t-FsVrIpFFILI0GMqnJKqdPVNKw",
-  authDomain: "instantfood-d5e2e.firebaseapp.com",
-  projectId: "instantfood-d5e2e",
-  storageBucket: "instantfood-d5e2e.appspot.com",
-  messagingSenderId: "398842421357",
-  appId: "1:398842421357:web:c393308d5216cc5f749f64"
+  
 };
 
 if (!firebase.apps.length) {
