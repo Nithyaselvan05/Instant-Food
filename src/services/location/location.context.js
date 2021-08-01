@@ -13,7 +13,7 @@ export const LocationContextProvider = ({ children }) => {
   const onSearch = (searchKeyword) => {
     setIsLoading(true);
     setKeyword(searchKeyword);
-    };
+  };
 
   useEffect(() => {
     if (!keyword.length) {

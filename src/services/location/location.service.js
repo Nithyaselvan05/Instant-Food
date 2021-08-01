@@ -12,9 +12,18 @@ export const locationRequest = (searchTerm) => {
   });
 };
 
+
+// export const locationRequest = (searchTerm) => {
+//   // console.log(searchTerm)
+//   return fetch(
+//     `http://localhost:5001/instantfood-d5e2e/us-central1/geocode?city=${searchTerm}`
+//   ).then((res) => res.json())
+//   .then(data => console.log(data));
+// };
 export const locationTransform = (result) => {
+  // console.log(result)
   const formattedResponse = camelize(result);
-  const { geometry ={} } = formattedResponse.results[0];
+  const { geometry = {} } = formattedResponse.results[0];
   const { lat, lng } = geometry.location;
 
   return { lat, lng, viewport: geometry.viewport };

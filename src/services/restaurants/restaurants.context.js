@@ -4,7 +4,9 @@ import {
   restaurantsRequest,
   restaurantsTransform,
 } from "./restaurants.service";
+
 import { LocationContext } from "../location/location.context";
+
 export const RestaurantsContext = createContext();
 
 export const RestaurantsContextProvider = ({ children }) => {
@@ -16,6 +18,7 @@ export const RestaurantsContextProvider = ({ children }) => {
   const retrieveRestaurants = (loc) => {
     setIsLoading(true);
     setRestaurants([]);
+
     setTimeout(() => {
       restaurantsRequest(loc)
         .then(restaurantsTransform)

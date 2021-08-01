@@ -10,7 +10,13 @@ export const restaurantsRequest = (location) => {
     resolve(mock);
   });
 };
-
+// export const restaurantsRequest = (location) => {
+//   return fetch(
+//     `http://localhost:5001/instantfood-d5e2e/us-central1/placesNearby?location=${location}`
+//   ).then((res) => {
+//     return res.json();
+//   });
+// };
 export const restaurantsTransform = ({ results = [] }) => {
   const mappedResults = results.map((restaurant) => {
     restaurant.photos = restaurant.photos.map((p) => {
@@ -19,7 +25,7 @@ export const restaurantsTransform = ({ results = [] }) => {
 
     return {
       ...restaurant,
-      address:restaurant.vicinity,
+      address: restaurant.vicinity,
       isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
       isClosedTemporarily: restaurant.business_status === "CLOSED_TEMPORARILY",
     };
